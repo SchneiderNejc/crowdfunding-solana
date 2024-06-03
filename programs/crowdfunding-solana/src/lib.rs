@@ -7,7 +7,7 @@ pub mod crowdfunding_solana {
     use super::*;
 
     pub fn create(ctx: Context<Create>, name: String, 
-        description: String) -> Result<()> {
+        description: String) -> ProgramResult {
         let campaign = &mut ctx.accounts.campaign;
 
         campaign.name = name;
