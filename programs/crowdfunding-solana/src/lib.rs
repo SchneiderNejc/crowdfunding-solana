@@ -11,4 +11,3 @@ pub mod crowdfunding_solana {
 }
 
 #[derive(Accounts)]
-pub struct Initialize {}
