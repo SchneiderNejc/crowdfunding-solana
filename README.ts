@@ -11,3 +11,7 @@ solana build
 solana address -k ./target/deploy/crowdfunding-solana-keypair.json
 -retrieve projectid
 -replace it in Anchor.toml crowdfunding_solana and in lib.rs
+
+anchor deploy
+-deploys contract to testnet
+-can be accessed through explorer.solana.com
