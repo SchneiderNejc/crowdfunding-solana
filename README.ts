@@ -7,3 +7,7 @@ solana airdrop 2 CUTFj7GMje9fyBY5AjWZNDmwLoEZSQ3PJnSP3T7HyeEp --url devnet
 
 solana build
 -build project and generate program id
+
+solana address -k ./target/deploy/crowdfunding-solana-keypair.json
+-retrieve projectid
+-replace it in Anchor.toml crowdfunding_solana and in lib.rs
