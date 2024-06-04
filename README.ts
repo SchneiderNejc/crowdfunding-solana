@@ -4,3 +4,6 @@ solana-keygen new -o id.json
 
 solana airdrop 2 CUTFj7GMje9fyBY5AjWZNDmwLoEZSQ3PJnSP3T7HyeEp --url devnet
 -airdrop to the selected address
+
+solana build
+-build project and generate program id
