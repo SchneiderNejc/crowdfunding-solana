@@ -12,13 +12,9 @@ const App = () => {
         if (solana.isPhantom) {
           console.log("Phantom wallet found!");
           //if user is already connected, don't prompt to connect again.
-          const response = await solana.connect({
+/*           const response = await solana.connect({
             onlyIfTrusted: true, 
-          });
-          console.log("Connected with public key:", 
-            response.publicKey.toString()
-          );
-          setWalletAddress(response.publicKey.toString());
+          }); */
         } else {
           alert("Solana object not found! Get a Phantom wallet");
         }
