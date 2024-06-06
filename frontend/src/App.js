@@ -1,4 +1,5 @@
 import './App.css';
+import { useEffect } from "react";
 
 const App = () => {
   const checkIfWalletIsConnected = async() => {
