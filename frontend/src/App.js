@@ -17,6 +17,13 @@ const App = () => {
       console.error(error)
     }
   };
+  useEffect(() => {
+    const onLoad = async() => {
+      await checkIfWalletIsConnected()
+    }
+    window.addEventListener('load', onLoad)
+    return () => window.removeEventListener("load", onLoad);
+  }, []);
 }
 
 export default App;
