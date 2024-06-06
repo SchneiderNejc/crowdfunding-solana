@@ -24,6 +24,14 @@ const App = () => {
       console.error(error)
     }
   };
+
+
+const connectWallet = async() => {};
+
+const renderNotConnectedContainer = () => (
+  <button onClick={connectWallet}>Connect to Wallet</button>
+)
+
   useEffect(() => {
     const onLoad = async() => {
       await checkIfWalletIsConnected()
@@ -31,6 +39,8 @@ const App = () => {
     window.addEventListener('load', onLoad)
     return () => window.removeEventListener("load", onLoad);
   }, []);
+
+  return <div className="App">{renderNotConnectedContainer()}</div>
 }
 
 export default App;
