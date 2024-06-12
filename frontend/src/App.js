@@ -60,6 +60,17 @@ const App = () => {
         ],
         program.programId
       );
+      await program.rpc.create(
+        'campaign name',
+        'campaign description',
+        {
+          accounts: {
+            campaign,
+            user: provider.wallet.publicKey,
+            systemProgram: SystemProgram.programId,
+          }
+        });
+      console.log('Created a new campaign w/ address:', campaign.toString());
     }
   }
 };
