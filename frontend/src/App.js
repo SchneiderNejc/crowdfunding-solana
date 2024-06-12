@@ -23,30 +23,32 @@ const App = () => {
   const checkIfWalletIsConnected = async () => {
     try {
 
-      const {solana} = window;
+      const { solana } = window;
       if (solana) {
         if (solana.isPhantom) {
           console.log("Phantom wallet found!");
           //if user is already connected, don't prompt to connect again.
-/*           const response = await solana.connect({
-            onlyIfTrusted: true, 
-          }); */
+          /*           const response = await solana.connect({
+                      onlyIfTrusted: true, 
+                    }); */
         } else {
           alert("Solana object not found! Get a Phantom wallet");
         }
       }
-    } catch(error) {
+    } catch (error) {
       console.error(error)
     }
   };
 
 
-const connectWallet = async() => {
-  const {solana} = window;
-  if (solana) {
-    const response = await solana.connect()
-    console.log('Connected with public key:', response.publicKey.toString());
-    setWalletAddress(response.publicKey.toString());
+  const connectWallet = async () => {
+    const { solana } = window;
+    if (solana) {
+      const response = await solana.connect()
+      console.log('Connected with public key:', response.publicKey.toString());
+      setWalletAddress(response.publicKey.toString());
+    }
+  };
   }
 };
 
