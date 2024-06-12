@@ -51,6 +51,15 @@ const App = () => {
   };
 
   const createCampaign = async () => {
+      const provider = getProvider();
+      const program = new Program(idl, programID, provider);
+      const [campaign] = await PublicKey.findProgramAddress(
+        [
+          utils.bytes.utf8.encode("CAMPAIGN_DEMO"),
+          provider.wallet.publicKey.toBuffer()
+        ],
+        program.programId
+      );
     }
   }
 };
