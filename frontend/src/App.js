@@ -83,6 +83,10 @@ const App = () => {
     <button onClick={connectWallet}>Connect to Wallet</button>
   )
 
+  const renderConnectedContainer = () => (
+    <button onClick={createCampaign}>Create a campaign</button>
+  )
+
   useEffect(() => {
     const onLoad = async () => {
       await checkIfWalletIsConnected()
