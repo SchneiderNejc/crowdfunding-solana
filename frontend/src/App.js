@@ -98,6 +98,10 @@ const App = () => {
   return <div className="App">{
     !walletAddress && renderNotConnectedContainer()
   }</div>
+  return <div className="App">
+    {!walletAddress && renderNotConnectedContainer()}
+    {walletAddress && renderConnectedContainer()}
+  </div>
 }
 
 export default App;
