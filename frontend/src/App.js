@@ -49,6 +49,9 @@ const App = () => {
       setWalletAddress(response.publicKey.toString());
     }
   };
+
+  const createCampaign = async () => {
+    }
   }
 };
 
