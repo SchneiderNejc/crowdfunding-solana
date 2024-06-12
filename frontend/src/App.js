@@ -51,6 +51,8 @@ const App = () => {
   };
 
   const createCampaign = async () => {
+
+    try {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
       const [campaign] = await PublicKey.findProgramAddress(
@@ -71,9 +73,11 @@ const App = () => {
           }
         });
       console.log('Created a new campaign w/ address:', campaign.toString());
+
+    } catch (error) {
+      console.error('Error creating campaign account:', error)
     }
   }
-};
 
 const renderNotConnectedContainer = () => (
   <button onClick={connectWallet}>Connect to Wallet</button>
