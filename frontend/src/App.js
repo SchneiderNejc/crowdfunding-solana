@@ -79,12 +79,12 @@ const App = () => {
     }
   }
 
-const renderNotConnectedContainer = () => (
-  <button onClick={connectWallet}>Connect to Wallet</button>
-)
+  const renderNotConnectedContainer = () => (
+    <button onClick={connectWallet}>Connect to Wallet</button>
+  )
 
   useEffect(() => {
-    const onLoad = async() => {
+    const onLoad = async () => {
       await checkIfWalletIsConnected()
     }
     window.addEventListener('load', onLoad)
