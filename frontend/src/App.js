@@ -14,7 +14,13 @@ const { SystemProgram } = web3;
 const App = () => {
 
   const [walletAddress, setWalletAddress] = useState(null);
-  const checkIfWalletIsConnected = async() => {
+  const getProvider = () => {
+    const connection = new Connection(network, opts.preflightCommitment);
+    const provider = new AnchorProvider(connection, window.solana, opts.preflightCommitment);
+    return provider;
+  }
+
+  const checkIfWalletIsConnected = async () => {
     try {
 
       const {solana} = window;
