@@ -68,6 +68,8 @@ const App = () => {
   };
 
   const donate = async publicKey => {
+      const provider = getProvider();
+      const program = new Program(idl, programID, provider);
   };
   const createCampaign = async () => {
 
