@@ -117,6 +117,9 @@ const App = () => {
     }
   }
 
+  const withdraw =async publicKey => {
+  }
+
   const renderNotConnectedContainer = () => (
     <button onClick={connectWallet}>Connect to Wallet</button>
   )
