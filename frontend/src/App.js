@@ -70,6 +70,16 @@ const App = () => {
   const donate = async publicKey => {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
+
+      await program.rpc.donate(new BN(0.2 * web3.LAMPORTS_PER_SOL), 
+      {
+        accounts: {
+          campaign: publicKey,
+            uuser: provider.wallet.publicKey,
+            systemProgram: SystemProgram.programId, 
+        },
+      });
+      console.log('Donated some money to:', publicKey.toString());
   };
   const createCampaign = async () => {
 
