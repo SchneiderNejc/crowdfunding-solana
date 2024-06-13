@@ -118,6 +118,7 @@ const App = () => {
   }
 
   const withdraw =async publicKey => {
+    try {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
 
@@ -129,6 +130,9 @@ const App = () => {
           },
         });
         console.log('Withdrew some money from: ', publicKey.toString());
+     } catch (error) {
+        console.error("Error withdrawing:", error);
+    }
   }
 
   const renderNotConnectedContainer = () => (
