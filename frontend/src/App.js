@@ -53,6 +53,10 @@ const App = () => {
     }
   };
 
+  const getCampaigns = async() => {
+  };
+  const donate = async publicKey => {
+  };
   const createCampaign = async () => {
 
     try {
