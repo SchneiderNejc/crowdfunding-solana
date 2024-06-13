@@ -16,6 +16,7 @@ const { SystemProgram } = web3;
 const App = () => {
 
   const [walletAddress, setWalletAddress] = useState(null);
+  const [campaigns, setCampaigns] = useState([]);
   const getProvider = () => {
     const connection = new Connection(network, opts.preflightCommitment);
     const provider = new AnchorProvider(connection, window.solana, opts.preflightCommitment);
