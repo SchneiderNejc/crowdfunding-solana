@@ -80,6 +80,7 @@ const App = () => {
         },
       });
       console.log('Donated some money to:', publicKey.toString());
+      getCampaigns();      
   };
   const createCampaign = async () => {
 
