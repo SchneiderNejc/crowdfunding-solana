@@ -140,7 +140,8 @@ const App = () => {
   )
 
   const renderConnectedContainer = () => (
-    <button onClick={createCampaign}>Create a campaign</button>
+    <>
+      <button onClick={createCampaign}>Create a campaign</button>
   )
 
   useEffect(() => {
