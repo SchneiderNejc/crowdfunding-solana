@@ -57,7 +57,16 @@ const App = () => {
     const connection = new Connection(network, opts.preflightCommitment);
     const provider =getProvider();
     const program = new Program(idl, programID, provider);
+    Promise.all(
+      (await connection.getProgramAccounts(programID)).map(
+        async (campaign) => ({
+          ...(await program.account.campaign.fetch(campaign.pubKey)),
+          pubkey: campaign.pubkey,
+        })
+      )
+    ).then((campaigns) => setCampaigns(campaigns));
   };
+
   const donate = async publicKey => {
   };
   const createCampaign = async () => {
