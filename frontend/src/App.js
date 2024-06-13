@@ -54,6 +54,9 @@ const App = () => {
   };
 
   const getCampaigns = async() => {
+    const connection = new Connection(network, opts.preflightCommitment);
+    const provider =getProvider();
+    const program = new Program(idl, programID, provider);
   };
   const donate = async publicKey => {
   };
