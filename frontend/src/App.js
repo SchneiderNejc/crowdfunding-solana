@@ -68,6 +68,7 @@ const App = () => {
   };
 
   const donate = async publicKey => {
+    try {
       const provider = getProvider();
       const program = new Program(idl, programID, provider);
 
@@ -81,7 +82,12 @@ const App = () => {
       });
       console.log('Donated some money to:', publicKey.toString());
       getCampaigns();      
+
+    } catch (error) {
+      console.error("Error donating:", error);
+    }
   };
+
   const createCampaign = async () => {
 
     try {
