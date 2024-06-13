@@ -118,6 +118,8 @@ const App = () => {
   }
 
   const withdraw =async publicKey => {
+      const provider = getProvider();
+      const program = new Program(idl, programID, provider);
   }
 
   const renderNotConnectedContainer = () => (
